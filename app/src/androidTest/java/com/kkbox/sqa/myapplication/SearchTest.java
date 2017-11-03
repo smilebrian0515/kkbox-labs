@@ -123,4 +123,16 @@ public class SearchTest {
         // check search result
         assertTrue(mDevice.wait(Until.hasObject(By.text("Too Shy")), TIMEOUT));
     }
+	
+	@Test
+    public void testSearchAlbum() {
+        // TODO
+        kkbox.openSearch().search("5566").checkAlbumResult("C'est Si Bon 最棒冠軍精選");
+    }
+	
+	@Test
+    public void testSearchSongForToo_shy() {
+        // TODO
+        kkbox.openSearch().search("蔡依林").checkPlayListResult("蔡依林 (Jolin Tsai) 歷年精選");
+    }
 }

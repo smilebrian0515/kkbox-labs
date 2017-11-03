@@ -29,4 +29,24 @@ public class KKSearchPage extends KKPage {
 
         return this;
     }
+	
+	public KKSearchPage checkAlbumResult(String expectedText) {
+		mDevice.wait(Until.findObject(By.text("album")), TIMEOUT).click();
+		
+		BySelector selector = By.text(expectedText);
+
+        assertTrue(this.device.wait(Until.hasObject(selector), TIMEOUT));
+
+        return this;
+    }
+	
+	public KKSearchPage checkPlayListResult(String expectedText) {
+		mDevice.wait(Until.findObject(By.text("playlist")), TIMEOUT).click();
+		
+		BySelector selector = By.text(expectedText);
+
+        assertTrue(this.device.wait(Until.hasObject(selector), TIMEOUT));
+
+        return this;
+    }
 }
